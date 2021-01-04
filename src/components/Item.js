@@ -1,40 +1,27 @@
 import React from "react";
 
-export default function Item() {
-    const itemName = 'Potion'
+export default function Item({ name, item }) {
 
+    if (item === undefined) return null;
 
     return <div className=''>
-        <h3 className='text-xl font-thin'>{itemName}</h3>
-        <p>Crafting cost: <span className='text-green-600'>230g</span></p>
-        <p>Purchase cost: <span className='text-red-600'>245g</span></p>
+        <h3 className='text-2xl font-thin'>{item.name}</h3>
+        <p>Crafting cost: <span className='text-green-600'>{item.craftingCost()}</span></p>
+        <p>Purchase cost: <span className='text-red-600'>{item.purchaseCost}</span></p>
         <p>To acquire: <input className='w-10' placeholder='qty'/></p>
-        <h4 className='mt-6'>Details</h4>
 
-        <table className='table-auto'>
-            <tbody>
-                <tr>
-                    <td>Vigil's Torch</td>
-                    <td>3</td>
-                    <td>ah</td>
-                    <td>56g 50s</td>
-                    <td>169g 50s</td>
-                </tr>
-                <tr>
-                    <td>Vigil's Torch</td>
-                    <td>3</td>
-                    <td>ah</td>
-                    <td>56g 50s</td>
-                    <td>169g 50s</td>
-                </tr>
-                <tr>
-                    <td>Vigil's Torch</td>
-                    <td>3</td>
-                    <td>ah</td>
-                    <td>56g 50s</td>
-                    <td>169g 50s</td>
-                </tr>
-            </tbody>
-        </table>
+        <ItemComponent name="Vigil's Torch" />
+        <ItemComponent />
+        <ItemComponent />
+        <ItemComponent />
+    </div>
+}
+
+const ItemComponent = ({ name }) => {
+    return <div className='my-2'>
+        <h4 className='text-lg font-thin'>{name}</h4>
+        <p>Quantity: 3</p>
+        <p>Source: AH</p>
+        <p>Cost ea/total: 56g 50s/169g 50s</p>
     </div>
 }
