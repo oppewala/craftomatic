@@ -34,16 +34,16 @@ function App() {
 
   return (
     <div className="w-full bg-gray-200 text-gray-700">
-      <h1 className="text-6xl font-thin tracking-wider text-center">Craft-o-matic</h1>
+      <h1>Craft-o-matic</h1>
       <ServerSelect/>
       <div className='my-6'>
-        <h2 className='text-4xl font-thin tracking-wider text-center'>Items</h2>
+        <h2>Items</h2>
         <div className='flex flex-col md:flex-row flex-wrap'>
           {items.map(v => <Item key={v.id} item={v} />)}
         </div>
       </div>
       <div className='w-max my-6'>
-        <h2 className='text-4xl font-thin tracking-wider text-center'>Shopping List</h2>
+        <h2>Shopping List</h2>
         <ul className='list-disc'>
           <li>Oil x4</li>
           <li>Vigil's Torch x24</li>

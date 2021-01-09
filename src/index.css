@@ -5,3 +5,18 @@
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-6xl font-thin tracking-wider text-center;
+    }
+    h2 {
+        @apply text-4xl font-thin tracking-wider text-center;
+    }
+    h3 {
+        @apply text-2xl font-thin;
+    }
+    h4 {
+        @apply text-lg font-thin;
+    }
+}
